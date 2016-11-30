@@ -8,22 +8,21 @@ public class Client {
     private Integer idClient;
     private float dureeMin;
     private float dureeMax;
-    private Integer quantite;
-    private float poids;
+    private float quantite;
+    private float duree_arret_passage;
 
     private float positionX;
     private float positionY;
 
-    public Client(Integer idClient, float dureeMin, float dureeMax,
-                  Integer quantite, float poids, float positionX,
-                  float positionY) {
+    public Client(Integer idClient, float positionX, float positionY, float
+            quantite, float dureeMin, float dureeMax, float duree_arret_passage) {
         this.idClient = idClient;
         this.dureeMin = dureeMin;
         this.dureeMax = dureeMax;
         this.quantite = quantite;
-        this.poids = poids;
         this.positionX = positionX;
         this.positionY = positionY;
+        this.duree_arret_passage = duree_arret_passage;
     }
 
     public Integer getIdClient() {
@@ -38,13 +37,10 @@ public class Client {
         return dureeMax;
     }
 
-    public Integer getQuantite() {
+    public float getQuantite() {
         return quantite;
     }
 
-    public float getPoids() {
-        return poids;
-    }
 
     public float getPositionX() {
         return positionX;
@@ -52,5 +48,18 @@ public class Client {
 
     public float getPositionY() {
         return positionY;
+    }
+
+    public float getDuree_arret_passage() {
+        return duree_arret_passage;
+    }
+
+
+    public void afficher_Client(){
+        System.out.println(this.idClient + " " +this.positionX + " " +this
+                .positionY + " " +
+                this
+                .quantite + " " + this.dureeMin + " " +this.dureeMax + " " + this
+                .duree_arret_passage);
     }
 }

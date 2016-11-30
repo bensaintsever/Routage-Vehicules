@@ -1,14 +1,16 @@
 package algo.bss;
 
+import java.util.ArrayList;
+
 /**
  * Created by benjamin.saint-sever on 10/11/2016.
  */
 public class Camion {
     private float positionX;
-
-
-
     private float positionY;
+
+    //Parcours des clients à visiter.
+    private ArrayList<Client> listeClient;
 
     //Optionnel
     private Integer capacite;
