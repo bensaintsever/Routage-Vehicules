@@ -1,5 +1,8 @@
 package algo.bss;
 
+import java.util.ArrayList;
+import java.util.Vector;
+
 /**
  * Created by benjamin.saint-sever on 10/11/2016.
  */
@@ -11,10 +14,17 @@ public class Client {
     private float quantite;
     private float duree_arret_passage;
 
-    private float positionX;
-    private float positionY;
+    private double positionX;
+    private double positionY;
 
-    public Client(Integer idClient, float positionX, float positionY, float
+    public void setProcheVoisins(Vector<Client> procheVoisins) {
+        this.procheVoisins = procheVoisins;
+    }
+
+    //private ArrayList<Client> procheVoisins;
+    private Vector<Client> procheVoisins;
+
+    public Client(Integer idClient, double positionX, double positionY, float
             quantite, float dureeMin, float dureeMax, float duree_arret_passage) {
         this.idClient = idClient;
         this.dureeMin = dureeMin;
@@ -24,6 +34,7 @@ public class Client {
         this.positionY = positionY;
         this.duree_arret_passage = duree_arret_passage;
     }
+
 
     public Integer getIdClient() {
         return idClient;
@@ -42,11 +53,11 @@ public class Client {
     }
 
 
-    public float getPositionX() {
+    public double getPositionX() {
         return positionX;
     }
 
-    public float getPositionY() {
+    public double getPositionY() {
         return positionY;
     }
 

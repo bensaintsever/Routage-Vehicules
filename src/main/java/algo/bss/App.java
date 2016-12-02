@@ -40,6 +40,7 @@ public class App {
                     capacite = sc.nextInt();
                 } else
                     fichierValide = false;
+                    //FAIRE QUELQUE CHOSE SI INVALIDE
 
                 // On saute les entetes textes
                 sc.next();
@@ -56,8 +57,8 @@ public class App {
 
                     //Parsing des données clients
                     Client clientActuel = new Client(sc.nextInt(),
-                            Float.parseFloat(sc.next()),
-                            Float.parseFloat(sc.next()),
+                            Double.parseDouble(sc.next()),
+                            Double.parseDouble(sc.next()),
                             Float.parseFloat(sc.next()),
                             Float.parseFloat(sc.next()),
                             Float.parseFloat(sc.next()),
@@ -75,19 +76,21 @@ public class App {
 
 
             // AFFICHAGE CLIENTS
-            Iterator it = listeClient.iterator();
+            /*Iterator it = listeClient.iterator();
             while (it.hasNext()) {
                 Client c = (Client) it.next();
                 c.afficher_Client();
 
             }
+*/
 
-
-            TimerHeuristique t = new HeuristiqueSansContraintes();
+            TimerHeuristique t = new HeuristiqueSansContraintes(listeClient);
             long start = System.currentTimeMillis();
             try {
-                t.initContinue(true);
-                t.start();
+                t.initContinue(true); //Variable de lancement (a changer)
+
+                t.start(); //Lancement de l'algorihme
+
 
                 t.join(Long.parseLong(time) * 1000);
                 t.initContinue(false);
@@ -101,6 +104,7 @@ public class App {
             }
 
         }
+
 
     }
 }

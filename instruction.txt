@@ -1,0 +1,7 @@
+1) formatage : make _wc 60 (temps d'executio) routage.txt
+et un deuxieme exec 
+
+2) Faire un fichier install listant les dépendances (exemple java 8)
+
+3) Paufiner le rapport
+

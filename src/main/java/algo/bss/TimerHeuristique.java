@@ -1,6 +1,7 @@
 package algo.bss;
 
 
+import java.util.ArrayList;
 
 /**
  * Created by benjamin.saint-sever on 30/11/2016.
@@ -16,6 +17,7 @@ public abstract class TimerHeuristique extends Thread {
             try {
                 sleep(0);//bidouillage
                 heuristique();
+
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }

@@ -13,13 +13,20 @@ public class Camion {
     private ArrayList<Client> listeClient;
 
     //Optionnel
+
+    public ArrayList<Client> getListeClient() {
+        return listeClient;
+    }
+
     private Integer capacite;
 
 
-    public Camion(float positionX, float positionY, Integer capacite) {
+    public Camion(float positionX, float positionY, Integer capacite,
+                  ArrayList<Client> list) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.capacite = capacite;
+        this.listeClient = list;
     }
 
     public float getPositionX() {
@@ -33,4 +40,6 @@ public class Camion {
     public Integer getCapacite() {
         return capacite;
     }
+
+
 }
