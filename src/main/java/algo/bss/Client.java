@@ -40,6 +40,12 @@ public class Client {
         return idClient;
     }
 
+
+    protected Client clone() {
+        return new Client(idClient,positionX,positionY,quantite,
+                dureeMin,dureeMax,duree_arret_passage);
+    }
+
     public float getDureeMin() {
         return dureeMin;
     }
