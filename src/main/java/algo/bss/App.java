@@ -3,7 +3,6 @@ package algo.bss;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -84,7 +83,7 @@ public class App {
             }
 */
 
-            TimerHeuristique t = new HeuristiqueSansContraintes(listeClient);
+            TimerHeuristique t = new heuristiqueSansContraintes(listeClient);
             long start = System.currentTimeMillis();
             try {
                 t.initContinue(true); //Variable de lancement (a changer)

@@ -9,24 +9,44 @@ public class Camion {
     private float positionX;
     private float positionY;
 
+    private Integer capacite;
+
     //Parcours des clients à visiter.
     private ArrayList<Client> listeClient;
 
-    //Optionnel
+
+
+
+    public void setListeClient(ArrayList<Client> listeClient) {
+        this.listeClient = listeClient;
+    }
+
+
+    protected Camion clone() {
+        Camion c = new Camion(positionX,positionY,capacite,listeClient);
+
+
+        ArrayList<Client> cloneClient = new ArrayList<Client>(this
+                .listeClient.size());
+        for(Client client : this.listeClient)
+            cloneClient.add(client.clone());
+
+        return c;
+    }
 
     public ArrayList<Client> getListeClient() {
         return listeClient;
     }
-
-    private Integer capacite;
-
 
     public Camion(float positionX, float positionY, Integer capacite,
                   ArrayList<Client> list) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.capacite = capacite;
-        this.listeClient = list;
+
+        this.listeClient  = new ArrayList<Client>(list.size());
+        for(Client client : list)
+            this.listeClient.add(client.clone());
     }
 
     public float getPositionX() {
